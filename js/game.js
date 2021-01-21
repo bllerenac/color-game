@@ -151,3 +151,4 @@ function easy(){
         })
       }
     }
+Game();
