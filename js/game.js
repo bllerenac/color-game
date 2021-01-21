@@ -30,10 +30,25 @@ for(let i = 0; i < squares.length; i++) {
     })
 }
 
-function changeColors(colorCorrect){
-	//loop through all squares
+resetBtn.addEventListener("click", function(){
+	//generate all new colors
+	colors = generateListOfColors(initialSquares);
+	//pick a new random color from array
+	correctColor = selectColor(colors);
+	//change colorDisplay to match picked color
+	title.textContent = correctColor;
+	resetBtn.textContent = "New Colors";
+	message.textContent = "";
+	//change colors of squares
 	for(var i = 0; i < squares.length; i++){
-		//change each color to match given color
+		squares[i].style.backgroundColor = colors[i];
+	}
+	//set winning color highlight back to default
+	h1.style.background = "steelblue"; 
+})
+
+function changeColors(colorCorrect){
+	for(var i = 0; i < squares.length; i++){
         squares[i].style.background = colorCorrect;
         h1.style.background = colorCorrect
 	}	
