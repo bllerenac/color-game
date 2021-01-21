@@ -1,13 +1,20 @@
-let start_squares = 6;
+let start_squares = 6
+    color_list = generateListOfColors(start_squares)
+    correct_color = pickWinningColor(color_list)
 
-function listOfColors(squares) {
-    let color_list = []
+function pickWinningColor(color_list) {
+    let winning_color = Math.floor(Math.random() * color_list.length)
+    return color_list[winning_color]
+}
+
+function generateListOfColors(squares) {
+    let colors = []
 
     for(let i = 0; i < squares; i++) {
-        color_list.push(randomColor())
+        colors.push(randomColor())
     }
 
-    return color_list
+    return colors
 }
 
 function randomColor() {
