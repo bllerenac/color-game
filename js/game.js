@@ -1,14 +1,16 @@
-const displayedSquares = document.querySelectorAll(".square")
+const Squares = document.querySelectorAll(".square")
 let initialSquares = 6
     colorList = generateListOfColors(initialSquares)
-    correctColor = pickWinningColor(colorList)
+    correctColor = selectColor(colorList)
+
+for(let square of Squares) {
+    square.style.backgroundColor = selectColor(colorList)
+}
 
 
-
-
-function pickWinningColor(colorList) {
-    let winningColor = Math.floor(Math.random() * colorList.length)
-    return colorList[winningColor]
+function selectColor(colorList) {
+    let squareColor = Math.floor(Math.random() * colorList.length)
+    return colorList[squareColor]
 }
 
 function generateListOfColors(squares) {
