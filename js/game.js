@@ -1,7 +1,8 @@
 let initialSquares = 6
     colorList = generateListOfColors(initialSquares)
     correctColor = selectColor(colorList)
-    squares = document.querySelectorAll(".square")
+    title = document.getElementById("colorCode")
+    squares = document.querySelectorAll(".color_option")
     message = document.getElementById("message")
     resetBtn = document.getElementById("reset")
 
