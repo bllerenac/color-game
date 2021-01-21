@@ -1,0 +1,28 @@
+body {
+	background-color: var(--black);
+	margin: 0;
+	font-family: var(--Roboto)
+}
+
+p{
+  font-size: 32px;
+  margin: 0;
+}
+
+h1 {
+	font-family: var(--Roboto);
+  text-align: center;
+  font-size: 32px;
+	line-height: 1.1;
+	font-weight: normal;
+	color: var(--white);
+	background: steelblue;
+	margin: 0; 
+	text-transform: uppercase;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#colorCode {
+	font-size: 64px;
+}
