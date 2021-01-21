@@ -1,0 +1,9 @@
+.selected {
+	color: white;
+	background: steelblue;
+}
+
+button:hover {
+	color: white;
+	background: steelblue;
+}
