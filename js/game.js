@@ -1,11 +1,14 @@
 let initialSquares = 6
-colorList = generateListOfColors(initialSquares)
-correctColor = selectColor(colorList)
-h1 = document.querySelector("h1");
-title = document.getElementById("colorCode")
-squares = document.querySelectorAll(".color_option")
-message = document.getElementById("message")
-resetBtn = document.getElementById("reset")
+let colorList = generateListOfColors(initialSquares)
+let correctColor = selectColor(colorList)
+let h1 = document.querySelector("h1");
+let title = document.getElementById("colorCode")
+let squares = document.querySelectorAll(".color_option")
+let message = document.getElementById("message")
+let resetBtn = document.getElementById("reset")
+let easy_button = document.getElementById("easyButton");
+let hard_button = document.getElementById("hardButton");
+let toggle = document.getElementsByClassName("easy");
 
 colorCode.textContent = correctColor;
 
@@ -43,6 +46,9 @@ resetBtn.addEventListener("click", function(){
 	h1.style.background = "steelblue"; 
 })
 
+easy_button.addEventListener("click",easy);
+hard_button.addEventListener("click",hard);
+
 function changeColors(colorCorrect){
 	for(var i = 0; i < squares.length; i++){
         squares[i].style.background = colorCorrect;
@@ -73,4 +79,67 @@ function randomColor() {
         return "rgb(" + r + ", " + g + ", " + b + ")"
 }
 
-Game();
+function easy(){
+    for(let l of toggle){
+      console.log(l);
+      l.style.display = "none";
+    }
+
+    initialSquares = 3;
+
+    newList = generateListOfColors(initialSquares)
+    correctColor = selectColor(newList)
+
+    colorCode.textContent = correctColor;
+    h1.style.background = "steelblue"; 
+  
+    for(let i = 0; i < squares.length; i++) {
+      squares[i].style.backgroundColor = newList[i];
+      squares[i].addEventListener("click", function() {
+      let squareColor = squares[i].style.backgroundColor
+  
+          if(squareColor === correctColor) {
+              message.textContent = "Correct!";
+        resetBtn.textContent = "Play Again?";
+        changeColors(squareColor);
+        h1.style.background = squareColor;
+          } else {
+              message.textContent = "Try again"
+              squares[i].style.backgroundColor = "#232323"
+              squares[i].style.borderColor = "#232323"
+          }
+      })
+    }
+}
+
+  function hard(){
+    for(let l of toggle){
+      console.log(l);
+      l.style.display = "";
+    }
+
+      initialSquares = 6;
+      newList = generateListOfColors(initialSquares)
+      correctColor = selectColor(newList)
+
+      colorCode.textContent = correctColor;
+      h1.style.background = "steelblue"; 
+
+      for(let i = 0; i < squares.length; i++) {
+        squares[i].style.backgroundColor = newList[i];
+        squares[i].addEventListener("click", function() {
+        let squareColor = squares[i].style.backgroundColor
+    
+            if(squareColor === correctColor) {
+                message.textContent = "Correct!";
+          resetBtn.textContent = "Play Again?";
+          changeColors(squareColor);
+          h1.style.background = squareColor;
+            } else {
+                message.textContent = "Try again"
+                squares[i].style.backgroundColor = "#232323"
+                squares[i].style.borderColor = "#232323"
+            }
+        })
+      }
+    }
