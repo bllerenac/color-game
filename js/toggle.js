@@ -30,8 +30,7 @@ function easy(){
             // squares[i].style.display = "none"
         }
     })
-}
-
+  }
 }
 
 function hard(){
@@ -63,7 +62,7 @@ let initialSquares = 6;
             // squares[i].style.display = "none"
         }
     })
-}
+  }
 }
 
 easy_button.addEventListener("click",easy);
