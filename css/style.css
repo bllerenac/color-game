@@ -1,5 +1,5 @@
-.square{
-  border: 1px solid black;
-  height: 50px;
-  width:  50px;
-}
+@import "global.css";
+@import "page.css";
+@import "components/button.css";
+@import "components/game_colors.css";
+@import "components/menu.css";

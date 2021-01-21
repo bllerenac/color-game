@@ -1,10 +1,34 @@
-let start_squares = 6
-    color_list = generateListOfColors(start_squares)
-    correct_color = pickWinningColor(color_list)
+let initialSquares = 6
+    colorList = generateListOfColors(initialSquares)
+    correctColor = selectColor(colorList)
+    title = document.getElementById("colorCode")
+    squares = document.querySelectorAll(".color_option")
+    message = document.getElementById("message")
+    resetBtn = document.getElementById("reset")
 
-function pickWinningColor(color_list) {
-    let winning_color = Math.floor(Math.random() * color_list.length)
-    return color_list[winning_color]
+title.textContent = correctColor
+
+for(let i = 0; i < squares.length; i++) {
+    squares[i].style.backgroundColor = colorList[i];
+    squares[i].addEventListener("click", function() {
+        let squareColor = squares[i].style.backgroundColor
+        if(squareColor == correctColor) {
+            // Win condition
+            resetBtn.textContent = "Play again?"
+        } else {
+            message.textContent = "Try again"
+            squares[i].style.backgroundColor = "#232323"
+            squares[i].style.borderColor = "#232323"
+            // or
+            // squares[i].style.display = "none"
+        }
+    })
+}
+
+
+function selectColor(colorList) {
+    let squareColor = Math.floor(Math.random() * colorList.length)
+    return colorList[squareColor]
 }
 
 function generateListOfColors(squares) {

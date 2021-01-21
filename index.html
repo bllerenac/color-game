@@ -3,33 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <title>Color Game</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>The Great</title>
   </head>
   <body>
-
-    <h1>The RGB Color Guessing Game
+    <h1>The Great
       <br> 
-      <p id="colorDisplay">RGB</p>
+      <p id="colorCode">RGB</p>
+      <p >COLOR GAME</p>
     </h1>
     
-    <div id="stripe">
+    <div id="menu">
       <button id="reset">New Colors</button>
       <span id="message"></span>
       <button id="easyButton">Easy</button>
       <button id="hardButton"class="selected">Hard</button>
       
     </div>
-      <div id="container">
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square easy" ></div>
-        <div class="square easy"></div>
-        <div class="square easy"></div>
+      <div id="colors_container">
+        <div class="color_option "></div>
+        <div class="color_option"></div>
+        <div class="color_option"></div>
+        <div class="color_option easy"></div>
+        <div class="color_option easy"></div>
+        <div class="color_option easy"></div>
       </div>
 
-    <!-- Start coding here -->
     <script src="js/game.js"></script>
     <script src="js/toggle.js"></script>
   </body>

@@ -1,0 +1,11 @@
+#menu {
+	background: white;
+	height: 30px;
+	text-align: center;
+	color: black;
+}
+
+#message {
+	display: inline-block;
+	width: 20%;
+}
