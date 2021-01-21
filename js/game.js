@@ -92,6 +92,10 @@ function easy(){
 
     colorCode.textContent = correctColor;
     h1.style.background = "steelblue"; 
+    easy_button.style.background = "steelblue";
+    easy_button.style.color = "white";
+    hard_button.style.background = "white";
+    hard_button.style.color = "steelblue";
   
     for(let i = 0; i < squares.length; i++) {
       squares[i].style.backgroundColor = newList[i];
@@ -100,9 +104,9 @@ function easy(){
   
           if(squareColor === correctColor) {
               message.textContent = "Correct!";
-        resetBtn.textContent = "Play Again?";
-        changeColors(squareColor);
-        h1.style.background = squareColor;
+              resetBtn.textContent = "Play Again?";
+              changeColors(squareColor);
+              h1.style.background = squareColor;
           } else {
               message.textContent = "Try again"
               squares[i].style.backgroundColor = "#232323"
@@ -123,7 +127,11 @@ function easy(){
       correctColor = selectColor(newList)
 
       colorCode.textContent = correctColor;
-      h1.style.background = "steelblue"; 
+      h1.style.background = "steelblue";
+      hard_button.style.background = "steelblue";
+      hard_button.style.color = "white";
+      easy_button.style.background = "white";
+      easy_button.style.color = "steelblue";
 
       for(let i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = newList[i];
@@ -132,9 +140,9 @@ function easy(){
     
             if(squareColor === correctColor) {
                 message.textContent = "Correct!";
-          resetBtn.textContent = "Play Again?";
-          changeColors(squareColor);
-          h1.style.background = squareColor;
+                resetBtn.textContent = "Play Again?";
+                changeColors(squareColor);
+                h1.style.background = squareColor;
             } else {
                 message.textContent = "Try again"
                 squares[i].style.backgroundColor = "#232323"
