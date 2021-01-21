@@ -4,8 +4,9 @@
 }
 
 .color_option {
-  width: 30%;
+  width: 29%;
   background: purple;
+  border: 1px solid var(--white);
   padding-bottom: 30%;
   float: left;
   margin: 1.66%;

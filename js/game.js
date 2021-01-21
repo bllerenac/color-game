@@ -1,30 +1,43 @@
 let initialSquares = 6
-    colorList = generateListOfColors(initialSquares)
-    correctColor = selectColor(colorList)
-    title = document.getElementById("colorDisplay")
-    squares = document.querySelectorAll(".square")
-    message = document.getElementById("message")
-    resetBtn = document.getElementById("reset")
+colorList = generateListOfColors(initialSquares)
+correctColor = selectColor(colorList)
+h1 = document.querySelector("h1");
+title = document.getElementById("colorCode")
+squares = document.querySelectorAll(".color_option")
+message = document.getElementById("message")
+resetBtn = document.getElementById("reset")
 
-title.textContent = correctColor
+colorCode.textContent = correctColor;
 
 for(let i = 0; i < squares.length; i++) {
     squares[i].style.backgroundColor = colorList[i];
     squares[i].addEventListener("click", function() {
-        let squareColor = squares[i].style.backgroundColor
-        if(squareColor == correctColor) {
+    let squareColor = squares[i].style.backgroundColor
+
+        if(squareColor === correctColor) {
             // Win condition
-            resetBtn.textContent = "Play again?"
+            message.textContent = "Correct!";
+			resetBtn.textContent = "Play Again?";
+			changeColors(squareColor);
+			h1.style.background = squareColor;
         } else {
             message.textContent = "Try again"
             squares[i].style.backgroundColor = "#232323"
-            squares[i].style.borderColor = "#FFFFFF"
+            squares[i].style.borderColor = "#232323"
             // or
             // squares[i].style.display = "none"
         }
     })
 }
 
+function changeColors(colorCorrect){
+	//loop through all squares
+	for(var i = 0; i < squares.length; i++){
+		//change each color to match given color
+        squares[i].style.background = colorCorrect;
+        h1.style.background = colorCorrect
+	}	
+}
 
 function selectColor(colorList) {
     let squareColor = Math.floor(Math.random() * colorList.length)
@@ -48,3 +61,4 @@ function randomColor() {
     
         return "rgb(" + r + ", " + g + ", " + b + ")"
 }
+
