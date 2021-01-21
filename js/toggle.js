@@ -7,7 +7,7 @@ function easy(){
     l.style.display = "none";
   }
 
-  let initialSquares = 3;
+  initialSquares = 3;
   colorList = generateListOfColors(initialSquares)
   correctColor = selectColor(colorList)
 
@@ -32,14 +32,15 @@ function easy(){
     })
   }
 }
+
 
 function hard(){
-for(let l of toggle){
-  console.log(l);
-  l.style.display = "";
-}
+  for(let l of toggle){
+    console.log(l);
+    l.style.display = "";
+  }
 
-let initialSquares = 6;
+  initialSquares = 6;
   colorList = generateListOfColors(initialSquares)
   correctColor = selectColor(colorList)
 
@@ -63,6 +64,7 @@ let initialSquares = 6;
         }
     })
   }
+
 }
 
 easy_button.addEventListener("click",easy);

@@ -12,23 +12,27 @@ let toggle = document.getElementsByClassName("easy");
 
 colorCode.textContent = correctColor;
 
-for(let i = 0; i < squares.length; i++) {
-    squares[i].style.backgroundColor = colorList[i];
-    squares[i].addEventListener("click", function() {
-    let squareColor = squares[i].style.backgroundColor
+function Game() {
+    for(let i = 0; i < squares.length; i++) {
+        squares[i].style.backgroundColor = colorList[i];
+        squares[i].addEventListener("click", function() {
+        
+        let squareColor = squares[i].style.backgroundColor
 
         if(squareColor === correctColor) {
             message.textContent = "Correct!";
-			resetBtn.textContent = "Play Again?";
-			changeColors(squareColor);
-			h1.style.background = squareColor;
+            resetBtn.textContent = "Play Again?";
+            changeColors(squareColor);
+            h1.style.background = squareColor;
         } else {
             message.textContent = "Try again"
             squares[i].style.backgroundColor = "#232323"
             squares[i].style.borderColor = "#232323"
         }
-    })
+        })
+    }
 }
+
 
 resetBtn.addEventListener("click", function(){
 	colors = generateListOfColors(initialSquares);
