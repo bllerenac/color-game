@@ -1,10 +1,12 @@
 const Squares = document.querySelectorAll(".square")
+const Title = document.getElementById("colorDisplay")
 let initialSquares = 6
     colorList = generateListOfColors(initialSquares)
     correctColor = selectColor(colorList)
 
 for(let square of Squares) {
     square.style.backgroundColor = selectColor(colorList)
+    Title.textContent = correctColor
 }
 
 
