@@ -3,11 +3,26 @@ let initialSquares = 6
     correctColor = selectColor(colorList)
     title = document.getElementById("colorDisplay")
     squares = document.querySelectorAll(".square")
+    message = document.getElementById("message")
+    resetBtn = document.getElementById("reset")
 
 title.textContent = correctColor
 
 for(let i = 0; i < squares.length; i++) {
     squares[i].style.backgroundColor = colorList[i];
+    squares[i].addEventListener("click", function() {
+        let squareColor = squares[i].style.backgroundColor
+        if(squareColor == correctColor) {
+            // Win condition
+            resetBtn.textContent = "Play again?"
+        } else {
+            message.textContent = "Try again"
+            squares[i].style.backgroundColor = "#232323"
+            squares[i].style.borderColor = "#FFFFFF"
+            // or
+            // squares[i].style.display = "none"
+        }
+    })
 }
 
 
