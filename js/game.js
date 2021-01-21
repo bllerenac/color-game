@@ -18,7 +18,7 @@ for(let i = 0; i < squares.length; i++) {
         } else {
             message.textContent = "Try again"
             squares[i].style.backgroundColor = "#232323"
-            squares[i].style.borderColor = "#FFFFFF"
+            squares[i].style.borderColor = "#232323"
             // or
             // squares[i].style.display = "none"
         }
