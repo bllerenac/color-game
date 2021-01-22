@@ -15,6 +15,7 @@ colorCode.textContent = correctColor;
 function Game() {
     for(let i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = colorList[i];
+        squares[i].style.borderColor = "#FFFFFF"
         squares[i].addEventListener("click", function() {
         
         let squareColor = squares[i].style.backgroundColor
@@ -41,7 +42,8 @@ resetBtn.addEventListener("click", function(){
 	resetBtn.textContent = "New Colors";
 	message.textContent = "";
 	for(var i = 0; i < squares.length; i++){
-		squares[i].style.backgroundColor = colors[i];
+        squares[i].style.backgroundColor = colors[i];
+        squares[i].style.borderColor = "#FFFFFF";
 	}
 	h1.style.background = "steelblue"; 
 })
@@ -52,6 +54,7 @@ hard_button.addEventListener("click",hard);
 function changeColors(colorCorrect){
 	for(var i = 0; i < squares.length; i++){
         squares[i].style.background = colorCorrect;
+        squares[i].style.borderColor = "#232323"
         h1.style.background = colorCorrect
 	}	
 }
@@ -87,8 +90,8 @@ function easy(){
 
     initialSquares = 3;
 
-    newList = generateListOfColors(initialSquares)
-    correctColor = selectColor(newList)
+    colorList = generateListOfColors(initialSquares)
+    correctColor = selectColor(colorList)
 
     colorCode.textContent = correctColor;
     h1.style.background = "steelblue"; 
@@ -97,23 +100,7 @@ function easy(){
     hard_button.style.background = "white";
     hard_button.style.color = "steelblue";
   
-    for(let i = 0; i < squares.length; i++) {
-      squares[i].style.backgroundColor = newList[i];
-      squares[i].addEventListener("click", function() {
-      let squareColor = squares[i].style.backgroundColor
-  
-          if(squareColor === correctColor) {
-              message.textContent = "Correct!";
-              resetBtn.textContent = "Play Again?";
-              changeColors(squareColor);
-              h1.style.background = squareColor;
-          } else {
-              message.textContent = "Try again"
-              squares[i].style.backgroundColor = "#232323"
-              squares[i].style.borderColor = "#232323"
-          }
-      })
-    }
+    Game();
 }
 
   function hard(){
@@ -123,8 +110,8 @@ function easy(){
     }
 
       initialSquares = 6;
-      newList = generateListOfColors(initialSquares)
-      correctColor = selectColor(newList)
+      colorList = generateListOfColors(initialSquares)
+      correctColor = selectColor(colorList)
 
       colorCode.textContent = correctColor;
       h1.style.background = "steelblue";
@@ -133,22 +120,7 @@ function easy(){
       easy_button.style.background = "white";
       easy_button.style.color = "steelblue";
 
-      for(let i = 0; i < squares.length; i++) {
-        squares[i].style.backgroundColor = newList[i];
-        squares[i].addEventListener("click", function() {
-        let squareColor = squares[i].style.backgroundColor
-    
-            if(squareColor === correctColor) {
-                message.textContent = "Correct!";
-                resetBtn.textContent = "Play Again?";
-                changeColors(squareColor);
-                h1.style.background = squareColor;
-            } else {
-                message.textContent = "Try again"
-                squares[i].style.backgroundColor = "#232323"
-                squares[i].style.borderColor = "#232323"
-            }
-        })
-      }
+      Game();
     }
+
 Game();
