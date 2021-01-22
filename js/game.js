@@ -54,6 +54,7 @@ hard_button.addEventListener("click",hard);
 function changeColors(colorCorrect){
 	for(var i = 0; i < squares.length; i++){
         squares[i].style.background = colorCorrect;
+        squares[i].style.borderColor = "#232323"
         h1.style.background = colorCorrect
 	}	
 }
