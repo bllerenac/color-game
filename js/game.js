@@ -41,7 +41,8 @@ resetBtn.addEventListener("click", function(){
 	resetBtn.textContent = "New Colors";
 	message.textContent = "";
 	for(var i = 0; i < squares.length; i++){
-		squares[i].style.backgroundColor = colors[i];
+        squares[i].style.backgroundColor = colors[i];
+        squares[i].style.borderColor = "#FFFFFF";
 	}
 	h1.style.background = "steelblue"; 
 })
@@ -99,6 +100,7 @@ function easy(){
   
     for(let i = 0; i < squares.length; i++) {
       squares[i].style.backgroundColor = newList[i];
+      squares[i].style.borderColor = "#FFFFFF";
       squares[i].addEventListener("click", function() {
       let squareColor = squares[i].style.backgroundColor
   
@@ -135,6 +137,7 @@ function easy(){
 
       for(let i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = newList[i];
+        squares[i].style.borderColor = "#FFFFFF";
         squares[i].addEventListener("click", function() {
         let squareColor = squares[i].style.backgroundColor
     
